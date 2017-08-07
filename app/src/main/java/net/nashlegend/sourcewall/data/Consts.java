@@ -80,6 +80,8 @@ public class Consts {
                 "sourcewall.key.user.has.learned.load.my.tags";
         public static final String Key_User_Has_Learned_Add_Image =
                 "sourcewall.key.user.has.learned.add.image";
+        public static final String Key_Push_Enabled =
+                "sourcewall.key.push.enabled";
 
         // 保存SharedPreferences的Key，用于保存草稿
         public static final String Key_Sketch_Article_Reply = "sourcewall.key.sketch.article.reply";

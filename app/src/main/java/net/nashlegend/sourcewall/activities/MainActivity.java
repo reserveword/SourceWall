@@ -2,11 +2,13 @@ package net.nashlegend.sourcewall.activities;
 
 import static net.nashlegend.sourcewall.data.Consts.Keys.Key_Show_Group_First_Homepage;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.view.View;
 
+import net.nashlegend.sourcewall.MessagePushService;
 import net.nashlegend.sourcewall.R;
 import net.nashlegend.sourcewall.data.Config;
 import net.nashlegend.sourcewall.data.Consts.Keys;
@@ -81,6 +83,10 @@ public class MainActivity extends BaseActivity {
             if (crtFragment != profileFragment && !PrefsUtil.readBoolean(Keys.Key_I_Hate_Badge,
                     false)) {
                 checkUnread();
+            }
+            if (PrefsUtil.readBoolean(Keys.Key_Push_Enabled,false)){
+                Intent serviceIntent = new Intent(getApplicationContext(),MessagePushService.class);
+                startService(serviceIntent);
             }
         }
     }
