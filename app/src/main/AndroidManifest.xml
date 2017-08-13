@@ -150,7 +150,9 @@
         <service
             android:name=".MessagePushService"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true" />
+
+        <receiver android:name=".MessagePushService$NotificationReceiver"/>
     </application>
 
 </manifest>
